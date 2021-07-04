@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://runmoony.github.io/sitemap.xml
