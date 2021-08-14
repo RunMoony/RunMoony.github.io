@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title> - Articles</title>
-    <description>꾸준히 작성해 나가는 WEB공부 블로그</description>
+    <description>안하는것보다 낫겠지...하는 코딩 블로그</description>
     <link>
     https://RunMoony.github.io</link>
     
       
       <item>
-        <title>크롤링</title>
+        <title>프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리</title>
         
-          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차입니다!&lt;/span&gt;&lt;/p&gt;
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
-    &lt;li&gt;&lt;a href=&quot;./react-basic&quot;&gt;크롤링&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
         
-        <pubDate>Wed, 23 Jun 2021 23:10:00 +0900</pubDate>
+        <pubDate>Fri, 13 Aug 2021 23:10:00 +0900</pubDate>
         <link>
-        https://RunMoony.github.io/react-basic</link>
-        <guid isPermaLink="true">https://RunMoony.github.io/react-basic</guid>
+        https://RunMoony.github.io/nodejs1</link>
+        <guid isPermaLink="true">https://RunMoony.github.io/nodejs1</guid>
       </item>
       
     
