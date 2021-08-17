@@ -8,12 +8,33 @@
     
       
       <item>
+        <title>프레임워크 없이 간단한 RESTful API 서버 만들어보기_03.모든 API 완성하기</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        
+        <pubDate>Mon, 16 Aug 2021 19:36:00 +0900</pubDate>
+        <link>
+        https://RunMoony.github.io/nodejs3</link>
+        <guid isPermaLink="true">https://RunMoony.github.io/nodejs3</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -33,6 +54,7 @@
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>

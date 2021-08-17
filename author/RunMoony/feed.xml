@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://runmoony.github.io/author/RunMoony/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://runmoony.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-15T16:04:03+09:00</updated>
+  <updated>2021-08-17T10:44:07+09:00</updated>
   <id>https://runmoony.github.io/author/RunMoony/feed.xml</id>
 
   
@@ -32,6 +32,126 @@
 
   
     <entry>
+      <title type="html">프레임워크 없이 간단한 RESTful API 서버 만들어보기_03.모든 API 완성하기</title>
+      <link href="https://runmoony.github.io/nodejs3" rel="alternate" type="text/html" title="프레임워크 없이 간단한 RESTful API 서버 만들어보기_03.모든 API 완성하기" />
+      <published>2021-08-16T19:36:00+09:00</published>
+      <updated>2021-08-16T19:36:00+09:00</updated>
+      <id>https://runmoony.github.io/nodejs3</id>
+      <content type="html" xml:base="https://runmoony.github.io/nodejs3">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;noscript&gt;&lt;pre&gt;//프레임워크 없이 간단한 토이프로젝트 웹 서버 만들어보기
+
+/**
+ *블로그 포스팅 서비스
+ * - 로컬 파일을 데이터베이스로 활용할 예정 (JSON)
+ * - 인증 로직은 넣지 않습니다.
+ * - RESTful API를 사용합니다.
+ */
+
+const http = require(&amp;quot;http&amp;quot;);
+
+const posts = [
+  {
+    id: &amp;#39;my_first_post&amp;#39;,
+    title: &amp;#39;My first post&amp;#39;,
+    content: &amp;#39;Hello&amp;#39;,  
+  },
+  {
+    id: &amp;#39;my_second_post&amp;#39;,
+    title: &amp;#39;나의 두번째 포스트&amp;#39;,
+    content: &amp;#39;Second post!&amp;#39;,
+  },     
+]
+
+const server = http.createServer((req, res) =&amp;gt; {
+  const POSTS_ID_REGEX = /^\/posts\/([a-zA-Z0-9-_]+)$/
+  const postIdRegexResult = (req.url &amp;amp;&amp;amp; POSTS_ID_REGEX.exec(req.url)) || undefined
+
+  if (req.url === &amp;#39;/posts&amp;#39; &amp;amp;&amp;amp; req.method === &amp;#39;GET&amp;#39;) {
+    const result = {
+      posts: posts.map(post =&amp;gt; ({
+        id: post.id,
+        title: post.title,
+      })),
+      totalCount: posts.length,
+    }
+
+    res.statusCode = 200
+    res.setHeader(&amp;#39;Content-Type&amp;#39;,&amp;#39;application/json; charset=utf-8&amp;#39;)
+    res.end(JSON.stringify(result))
+  } else if (postIdRegexResult) { // GET /posts/:id
+    
+    const postId = postIdRegexResult[1]
+    const post = posts.find(post =&amp;gt; post.id === postId)
+
+    if (post) {
+      res.statusCode = 200
+      res.setHeader(&amp;#39;Content-Type&amp;#39;,&amp;#39;application/json; charset=utf-8&amp;#39;)
+      res.end(JSON.stringify(post))
+    } else {
+      res.statusCode = 404
+      res.end(&amp;#39;Post not found.&amp;#39;)
+    }
+  } else if (req.url === &amp;#39;/posts&amp;#39; &amp;amp;&amp;amp; req.method === &amp;#39;POST&amp;#39;) {
+    req.setEncoding(&amp;#39;utf-8&amp;#39;)
+    req.on(&amp;#39;data&amp;#39;, (data) =&amp;gt; {
+      const body = JSON.parse(data)
+      console.log(body)
+      posts.push({
+        id: body.title.toLowerCase().replace(/\s/g,&amp;#39;_&amp;#39;),
+        title: body.content,
+        content: body.content,
+      })
+    })
+
+    res.statusCode = 200
+    res.end(&amp;#39;Creating post&amp;#39;)
+  } else {
+    res.statusCode = 404
+    res.end(&amp;#39;Not found.&amp;#39;)
+  }
+});
+
+const PORT = 4000
+
+server.listen(PORT, () =&amp;gt; {
+  console.log(&amp;#39;The server is good!&amp;#39;)
+});
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/RunMoony/c684849c1b88dd210512aabf7cd382b0.js&quot;&gt; &lt;/script&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>RunMoony</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="nodejs" />
+      
+
+      
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출</title>
       <link href="https://runmoony.github.io/nodejs2" rel="alternate" type="text/html" title="프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출" />
       <published>2021-08-14T23:10:00+09:00</published>
@@ -41,6 +161,7 @@
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;noscript&gt;&lt;pre&gt;//프레임워크 없이 간단한 토이프로젝트 웹 서버 만들어보기
@@ -102,7 +223,7 @@ server.listen(PORT, () =&amp;gt; {
       
 
       
-        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출</summary>
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기</summary>
       
 
       
@@ -119,6 +240,7 @@ server.listen(PORT, () =&amp;gt; {
 &lt;ul class=&quot;table-of-contents-list&quot;&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;noscript&gt;&lt;pre&gt;//프레임워크 없이 간단한 토이프로젝트 웹 서버 만들어보기
@@ -175,7 +297,7 @@ server.listen(PORT, () =&amp;gt; {
       
 
       
-        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출</summary>
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기</summary>
       
 
       
