@@ -4,7 +4,7 @@
   <generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator>
   <link href="https://runmoony.github.io/author/RunMoony/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://runmoony.github.io/" rel="alternate" type="text/html" />
-  <updated>2021-08-22T16:48:55+09:00</updated>
+  <updated>2021-08-28T14:01:36+09:00</updated>
   <id>https://runmoony.github.io/author/RunMoony/feed.xml</id>
 
   
@@ -32,6 +32,131 @@
 
   
     <entry>
+      <title type="html">프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</title>
+      <link href="https://runmoony.github.io/nodejs5" rel="alternate" type="text/html" title="프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2" />
+      <published>2021-08-27T19:36:00+09:00</published>
+      <updated>2021-08-27T19:36:00+09:00</updated>
+      <id>https://runmoony.github.io/nodejs5</id>
+      <content type="html" xml:base="https://runmoony.github.io/nodejs5">&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;noscript&gt;&lt;pre&gt;const posts = [
+    {
+      id: &amp;#39;my_first_post&amp;#39;,
+      title: &amp;#39;My first post&amp;#39;,
+      content: &amp;#39;Hello&amp;#39;,  
+    },
+    {
+      id: &amp;#39;my_second_post&amp;#39;,
+      title: &amp;#39;나의 두번째 포스트&amp;#39;,
+      content: &amp;#39;Second post!&amp;#39;,
+    },     
+]
+  
+const routes = [
+    {
+        url: /^\/posts$/,
+        method: &amp;#39;GET&amp;#39;,
+        callback: async () =&amp;gt; ({
+            statusCode: 200,
+            body: posts,
+        }),
+    },
+
+    {
+        url: /^\/posts\/([a-zA-Z0-9-_]+)$/,
+        method: &amp;#39;GET&amp;#39;,
+        callback: async (matches) =&amp;gt; {
+            const postId = matches[1]
+            if (!postId) {
+                return {
+                    statusCode: 404,
+                    body: &amp;#39;Not found&amp;#39;,
+                }
+            }
+
+            const post = posts.find(_post =&amp;gt; _post.id === postId)
+
+            if (!post) {
+                return {
+                    statusCode: 404,
+                    body: &amp;#39;Not found&amp;#39;,
+                }
+            }
+
+            return {
+                statusCode: 200,
+                body: post,
+            }
+        },
+    },
+
+    {
+        url: /^\/posts$/,
+        method: &amp;#39;POST&amp;#39;,
+        callback: async (_, body) =&amp;gt; {
+            if (!body) {
+                return {
+                    statusCode: 400,
+                    body: &amp;#39;Ill-formed request.&amp;#39;
+                }
+            }
+
+            const title = body.title
+            const newPost = {
+                id: title.replace(/\s/g, &amp;#39;_&amp;#39;),
+                title,
+                content: body.content,
+            }
+
+            posts.push(newPost)
+            
+            return {
+                statusCode: 200,
+                body: newPost,
+            }
+        },
+    },
+]
+
+module.exports = {
+    routes,
+}&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/RunMoony/cd3c56f592fab98d2b1b77f23b2d3f25.js&quot;&gt; &lt;/script&gt;</content>
+
+      
+      
+      
+      
+      
+
+      <author>
+          <name>RunMoony</name>
+        
+        
+      </author>
+
+      
+
+      
+        <category term="nodejs" />
+      
+
+      
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</summary>
+      
+
+      
+      
+    </entry>
+  
+    <entry>
       <title type="html">프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1</title>
       <link href="https://runmoony.github.io/nodejs4" rel="alternate" type="text/html" title="프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1" />
       <published>2021-08-21T19:36:00+09:00</published>
@@ -43,6 +168,7 @@
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;noscript&gt;&lt;pre&gt;const posts = [
@@ -111,7 +237,7 @@ module.exports = {
       
 
       
-        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1</summary>
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</summary>
       
 
       
@@ -130,6 +256,7 @@ module.exports = {
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;noscript&gt;&lt;pre&gt;//프레임워크 없이 간단한 토이프로젝트 웹 서버 만들어보기
@@ -232,7 +359,7 @@ server.listen(PORT, () =&amp;gt; {
       
 
       
-        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1</summary>
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</summary>
       
 
       
@@ -251,6 +378,7 @@ server.listen(PORT, () =&amp;gt; {
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;noscript&gt;&lt;pre&gt;//프레임워크 없이 간단한 토이프로젝트 웹 서버 만들어보기
@@ -312,7 +440,7 @@ server.listen(PORT, () =&amp;gt; {
       
 
       
-        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1</summary>
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</summary>
       
 
       
@@ -331,6 +459,7 @@ server.listen(PORT, () =&amp;gt; {
     &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;noscript&gt;&lt;pre&gt;//프레임워크 없이 간단한 토이프로젝트 웹 서버 만들어보기
@@ -387,7 +516,7 @@ server.listen(PORT, () =&amp;gt; {
       
 
       
-        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1</summary>
+        <summary type="html">nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1 프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</summary>
       
 
       
