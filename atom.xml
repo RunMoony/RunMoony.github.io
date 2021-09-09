@@ -8,6 +8,32 @@
     
       
       <item>
+        <title>Express로 웹 사이트 만들기_01.미들웨어</title>
+        
+          <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
+&lt;ul class=&quot;table-of-contents-list&quot;&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs1&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs2&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs3&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API 완성하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+원래 블로그 컨셉을 ‘일기장’ 으로 정했는데, 지금까지는 글쓰기가 너무 귀찮아서 코드만 틱!하고 업로드한것 같다. 오늘부터는 꼭 글도 추가해서 업로드 해야지~ 몇일 안갈거 같지만 달려라 런무니…시~~장! 아니 작!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 08 Sep 2021 19:36:00 +0900</pubDate>
+        <link>
+        https://RunMoony.github.io/nodejs7</link>
+        <guid isPermaLink="true">https://RunMoony.github.io/nodejs7</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기</title>
         
           <description>&lt;p&gt;&lt;span class=&quot;table-of-contents-list&quot;&gt;nodejs 목차&lt;/span&gt;&lt;/p&gt;
@@ -18,6 +44,7 @@
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;br /&gt;&lt;br /&gt;
 database.json&lt;/p&gt;
@@ -148,6 +175,7 @@ module.exports = {
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -171,6 +199,7 @@ module.exports = {
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -194,6 +223,7 @@ module.exports = {
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -217,6 +247,7 @@ module.exports = {
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -240,6 +271,7 @@ module.exports = {
     &lt;li&gt;&lt;a href=&quot;./nodejs4&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs5&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2&lt;/a&gt;&lt;/li&gt;
     &lt;li&gt;&lt;a href=&quot;./nodejs6&quot;&gt;프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;./nodejs7&quot;&gt;Express로 웹 사이트 만들기_01.미들웨어&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
