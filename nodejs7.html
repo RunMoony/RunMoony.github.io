@@ -47,7 +47,7 @@
     <![endif]-->
     
     <!-- This tag outputs SEO meta+structured data and other important settings -->
-    <meta name="description" content="안하는것보다 낫겠지...하는 코딩 블로그" />
+    <meta name="description" content="나만 알아볼수 있고 이해할수 있는 오직 나만을 위한 개발블로그" />
     <link rel="shortcut icon" href="https://RunMoony.github.io/assets/built/images/author-logo.png" type="image/png" />
     <link rel="canonical" href="https://RunMoony.github.io/nodejs7" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -202,6 +202,7 @@ into the {body} of the default.hbs template -->
     <li><a href="./nodejs5">프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 2</a></li>
     <li><a href="./nodejs6">프레임워크 없이 간단한 RESTful API 서버 만들어보기_05. JSON 파일을 데이터베이스로 활용해 마무리하기</a></li>
     <li><a href="./nodejs7">Express로 웹 사이트 만들기_01.미들웨어</a></li>
+    <li><a href="./nodejs8">Express로 웹 사이트 만들기_이미지 업로드 핸들링</a></li>
 </ul>
 <p><br /><br />
 원래 블로그 컨셉을 ‘일기장’ 으로 정했는데, 지금까지는 글쓰기가 너무 귀찮아서 코드만 틱!하고 업로드한것 같다. 오늘부터는 꼭 글도 추가해서 업로드 해야지~ 몇일 안갈거 같지만 달려라 런무니…시~~장! 아니 작!</p>
@@ -396,6 +397,15 @@ app.listen(PORT, () =&gt; {
                                 
                                   
                                     
+                                        
+                                        
+                                            <li><a href="/nodejs8">Express로 웹 사이트 만들기_이미지 업로드 핸들링</a></li>
+                                        
+                                    
+                                  
+                                
+                                  
+                                    
                                   
                                 
                                   
@@ -419,8 +429,6 @@ app.listen(PORT, () =&gt; {
                                   
                                     
                                         
-                                        
-                                            <li><a href="/nodejs4">프레임워크 없이 간단한 RESTful API 서버 만들어보기_04. 가독성과 유지보수성을 살리는 리팩토링 1</a></li>
                                         
                                     
                                   
@@ -451,7 +459,7 @@ app.listen(PORT, () =&gt; {
                         <footer class="read-next-card-footer">
                             <a href="/tag/nodejs/">
                                 
-                                    See all 6 posts  →
+                                    See all 7 posts  →
                                 
                             </a>
                         </footer>
@@ -460,6 +468,55 @@ app.listen(PORT, () =&gt; {
             
 
             <!-- If there's a next post, display it using the same markup included from - partials/post-card.hbs -->
+            
+                
+
+    <article class="post-card post-template">
+        
+            <a class="post-card-image-link" href="/nodejs8">
+                <div class="post-card-image" style="background-image: url(/assets/built/images/nodejs.png)"></div>
+            </a>
+        
+        <div class="post-card-content">
+            <a class="post-card-content-link" href="/nodejs8">
+                <header class="post-card-header">
+                    
+                        
+                            
+                                <span class="post-card-tags">Nodejs</span>
+                            
+                        
+                    
+
+                    <h2 class="post-card-title">Express로 웹 사이트 만들기_이미지 업로드 핸들링</h2>
+                </header>
+                <section class="post-card-excerpt">
+                    
+                        <p>nodejs 목차 프레임워크 없이 간단한 RESTful API 서버 만들어보기_01.단순한 API 라우팅 처리 프레임워크 없이 간단한 RESTful API 서버 만들어보기_02. 정규식을 활용한 URL 인자 추출 프레임워크 없이 간단한 RESTful API 서버 만들어보기_03. 모든 API</p>
+                    
+                </section>
+            </a>
+            <footer class="post-card-meta">
+                
+                    
+                        
+                        <img class="author-profile-image" src="/assets/built/images/author-logo.png" alt="RunMoony" />
+                        
+                        <span class="post-card-author">
+                            <a href="/author/RunMoony/">RunMoony</a>
+                        </span>
+                    
+                
+                <span class="reading-time">
+                    
+                    
+                      1 min read
+                    
+                </span>
+            </footer>
+        </div>
+    </article>
+
             
 
             <!-- If there's a previous post, display it using the same markup included from - partials/post-card.hbs -->
